@@ -2,6 +2,13 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 
+
+import { UIShellModule } from 'carbon-components-angular/ui-shell/ui-shell.module';
+import { NotificationModule } from '@carbon/icons-angular';
+import { UserAvatarModule } from '@carbon/icons-angular';
+import { AppSwitcherModule } from '@carbon/icons-angular';
+import { HeaderComponent } from './header/header.component';
+
 describe('AppComponent', () => {
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
@@ -32,4 +39,14 @@ describe('AppComponent', () => {
 		const compiled = fixture.nativeElement;
 		expect(compiled.querySelector('.content span').textContent).toContain('carbon-angular-tutorial app is running!');
 	});
+});
+
+TestBed.configureTestingModule({
+	declarations: [HeaderComponent],
+	imports: [
+		UIShellModule,
+		NotificationModule,
+		UserAvatarModule,
+		AppSwitcherModule
+	]
 });
