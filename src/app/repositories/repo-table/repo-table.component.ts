@@ -9,7 +9,7 @@ import {
 	Table,
 	TableModel,
 	TableItem,
-	TableHeaderItem
+	TableHeaderItem,
 } from 'carbon-components-angular';
 import { Apollo } from 'apollo-angular';
 import gql from 'graphql-tag';
@@ -24,6 +24,8 @@ export class RepoTableComponent implements OnInit {
 	model: TableModel;
 	skeletonModel = Table.skeletonModel(10, 6);
 	skeleton = true;
+	sidePanel = false;
+	searchModel = ''
 
 	@ViewChild('linkTemplate', null)
 	protected linkTemplate: TemplateRef<any>;

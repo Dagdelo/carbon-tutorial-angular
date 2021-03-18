@@ -7,9 +7,26 @@ import {
 	GridModule,
 	TableModule,
 	LinkModule,
-	PaginationModule
+	PaginationModule,
+	PanelModule,
+	ToggleModule,
+	ButtonModule,
+	SearchModule,
+
 } from 'carbon-components-angular';
+
+import {
+	SettingsModule,
+	DeleteModule,
+	FilterModule,
+	SaveModule,
+	DownloadModule,
+	AddModule
+} from "@carbon/icons-angular";
+
 import { RepoTableComponent } from './repo-table/repo-table.component';
+// import { Button } from 'protractor';
+
 
 @NgModule({
 	declarations: [RepoPageComponent, RepoTableComponent],
@@ -19,7 +36,17 @@ import { RepoTableComponent } from './repo-table/repo-table.component';
 		GridModule,
 		TableModule,
 		LinkModule,
-		PaginationModule
+		PaginationModule,
+		PanelModule,
+		ToggleModule,
+		ButtonModule,
+		SettingsModule,
+		DeleteModule,
+		FilterModule,
+		SaveModule,
+		DownloadModule,
+		AddModule,
+		SearchModule
 	]
 })
 export class RepositoriesModule { }
