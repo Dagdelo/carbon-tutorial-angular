@@ -3,7 +3,7 @@
 		<h4 ibmTableHeaderTitle>Carbon Repositories</h4>
 		<p ibmTableHeaderDescription>A collection of public Carbon repositories.</p>
 	</ibm-table-header>
-	<ibm-table-toolbar [model]="model" #toolbar>
+	<ibm-table-toolbar [model]="model" [batchText]="null" [size]="md" (cancel)="cancelMethod()" #toolbar>
 		<ibm-table-toolbar-actions>
 			<button ibmButton="primary" [tabindex]="toolbar.selected ? 0 : -1">
 				Delete
@@ -33,8 +33,7 @@
 			</button>
 		</ibm-table-toolbar-content>
 	</ibm-table-toolbar>
-	<ibm-table [skeleton]="skeleton" [model]="skeleton ? skeletonModel : model" [showSelectionColumn]="false"
-		[striped]="false">
+	<ibm-table [skeleton]="skeleton" [model]="skeleton ? skeletonModel : model" [showSelectionColumn]="true">
 	</ibm-table>
 	<ibm-pagination [model]="model" (selectPage)="selectPage($event)"></ibm-pagination>
 </ibm-table-container>
@@ -51,7 +50,7 @@
 	</ul>
 </ng-template>
 
-<ibm-panel expanded="false">
-	<ibm-toggle [label]="Teste" [checked]="false">
+<ibm-panel [expanded]="showSidePanel">
+	<ibm-toggle [label]="Teste" [checked]="showSidePanel" (change)="toggleSideBarVisibility()">
 	</ibm-toggle>
 </ibm-panel>

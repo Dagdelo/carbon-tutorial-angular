@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { RepositoriesRoutingModule } from './repositories-routing.module';
 import { RepoPageComponent } from './repo-page/repo-page.component';
 import {
 	GridModule,
 	TableModule,
+	SearchModule,
 	LinkModule,
 	PaginationModule,
 	PanelModule,
 	ToggleModule,
 	ButtonModule,
-	SearchModule,
-
+	DialogModule,
+	NFormsModule
 } from 'carbon-components-angular';
 
 import {
@@ -22,7 +24,7 @@ import {
 	SaveModule,
 	DownloadModule,
 	AddModule
-} from "@carbon/icons-angular";
+} from '@carbon/icons-angular';
 
 import { RepoTableComponent } from './repo-table/repo-table.component';
 // import { Button } from 'protractor';
@@ -46,7 +48,10 @@ import { RepoTableComponent } from './repo-table/repo-table.component';
 		SaveModule,
 		DownloadModule,
 		AddModule,
-		SearchModule
+		SearchModule,
+		FormsModule,
+		DialogModule,
+		NFormsModule
 	]
 })
 export class RepositoriesModule { }

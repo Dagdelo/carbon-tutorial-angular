@@ -24,8 +24,13 @@ export class RepoTableComponent implements OnInit {
 	model: TableModel;
 	skeletonModel = Table.skeletonModel(10, 6);
 	skeleton = true;
-	sidePanel = false;
-	searchModel = ''
+	showSidePanel = false;
+	searchModel = '';
+	batchText = {
+		"SINGLE": "1 item selected",
+		"MULTIPLE": "{{count}} items selected"
+	  };
+	size = 'md';
 
 	@ViewChild('linkTemplate', null)
 	protected linkTemplate: TemplateRef<any>;
@@ -110,7 +115,7 @@ export class RepoTableComponent implements OnInit {
 
 		for (const datum of data) {
 			newData.push([
-				new TableItem({ data: datum.name, expandedData: datum.description }),
+				new TableItem({ data: datum.name/* , expandedData: datum.description  */}),
 				new TableItem({ data: new Date(datum.createdAt).toLocaleDateString() }),
 				new TableItem({ data: new Date(datum.updatedAt).toLocaleDateString() }),
 				new TableItem({ data: datum.issues.totalCount }),
@@ -125,5 +130,9 @@ export class RepoTableComponent implements OnInit {
 			]);
 		}
 		return newData;
+	}
+
+	toggleSideBarVisibility() {
+		this.showSidePanel = !this.showSidePanel;
 	}
 }

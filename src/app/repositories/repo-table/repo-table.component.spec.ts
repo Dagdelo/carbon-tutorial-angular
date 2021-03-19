@@ -2,7 +2,29 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ApolloTestingModule } from 'apollo-angular/testing';
 
 import { RepoTableComponent } from './repo-table.component';
-import { TableModule, LinkModule, PaginationModule } from 'carbon-components-angular';
+
+import { FormsModule } from '@angular/forms';
+import {
+	GridModule,
+	TableModule,
+	SearchModule,
+	LinkModule,
+	PaginationModule,
+	PanelModule,
+	ToggleModule,
+	ButtonModule,
+	DialogModule,
+	NFormsModule
+} from 'carbon-components-angular';
+
+import {
+	SettingsModule,
+	DeleteModule,
+	FilterModule,
+	SaveModule,
+	DownloadModule,
+	AddModule
+} from '@carbon/icons-angular';
 
 describe('RepoTableComponent', () => {
 	let component: RepoTableComponent;
@@ -15,7 +37,24 @@ describe('RepoTableComponent', () => {
 				TableModule,
 				LinkModule,
 				PaginationModule,
-				ApolloTestingModule
+				ApolloTestingModule,
+				GridModule,
+				TableModule,
+				LinkModule,
+				PaginationModule,
+				PanelModule,
+				ToggleModule,
+				ButtonModule,
+				SettingsModule,
+				DeleteModule,
+				FilterModule,
+				SaveModule,
+				DownloadModule,
+				AddModule,
+				SearchModule,
+				FormsModule,
+				DialogModule,
+				NFormsModule
 			]
 		})
 		.compileComponents();
